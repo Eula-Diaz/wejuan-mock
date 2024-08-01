@@ -33,6 +33,19 @@ module.exports = [
     },
   },
   {
+    // 复制问卷
+    url: "/api/question/duplicate/:id",
+    method: "post",
+    response: (ctx) => {
+      return {
+        errno: 0,
+        data: {
+          id: Random.id(),
+        },
+      };
+    },
+  },
+  {
     // 获取问卷列表
     url: "/api/question",
     method: "get",
@@ -49,6 +62,26 @@ module.exports = [
           }),
           total: 100,
         },
+      };
+    },
+  },
+  {
+    // 更新问卷
+    url: "/api/question/:id",
+    method: "patch",
+    response: (ctx) => {
+      return {
+        errno: 0,
+      };
+    },
+  },
+  {
+    // 删除问卷
+    url: "/api/question",
+    method: "delete",
+    response: (ctx) => {
+      return {
+        errno: 0,
       };
     },
   },
